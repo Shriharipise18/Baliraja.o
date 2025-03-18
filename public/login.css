@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/images/signup.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Form Container Styling */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    
+   
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+   
+}
+
+input:focus {
+    border-color: hsl(92, 99%, 28%); /* HSL equivalent of orangered */
+    outline: none;
+    box-shadow: 0 0 8px hsl(92, 99%, 28%); /* HSL equivalent with transparency */
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: hsl(92, 99%, 28%); /* HSL equivalent of orangered */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: hsl(92, 99%, 28%); /* Darker shade of HSL orangered */
+    transform: translateY(-2px);
+}
+
+/* Link Styling */
+p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+a {
+    color:hsl(92, 99%, 28%); /* HSL equivalent of orangered */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color:hsl(92, 99%, 28%); /* Darker shade of HSL orangered */
+    text-decoration: underline;
+}

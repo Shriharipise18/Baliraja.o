@@ -1,0 +1,363 @@
+/* ==================== */
+/* General Styles       */
+/* ==================== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 80px 0 0 0; /* Add top padding to account for the fixed nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes up full height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-image: url('/images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==================== */
+/* Navigation Styling   */
+/* ==================== */
+nav {
+    width: 100%;
+    background-color: hsl(92, 99%, 28%);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fix navigation at the top */
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure nav stays on top */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Add a max width */
+    margin: 0 auto; /* Center the navbar */
+    box-sizing: border-box;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ffc107; /* Add hover effect */
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Add spacing between links */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #ffc107; /* Add hover effect */
+}
+
+/* ==================== */
+/* General Heading Styling */
+/* ==================== */
+h1, h2 {
+    color: #333;
+    text-align: center; /* Center the headings */
+    margin-bottom: 20px; /* Add spacing below headings */
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* ==================== */
+/* Form Styling         */
+/* ==================== */
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto; /* Center the form horizontally */
+    max-width: 400px; /* Set maximum width */
+    background-color: white; /* Set background color */
+    padding: 25px; /* Add padding */
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 90%; /* Make form responsive */
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Round the corners */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Make inputs responsive */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+button {
+    padding: 12px;
+    background-color: hsl(92, 99%, 28%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px; /* Round the corners */
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Make button responsive */
+}
+
+button:hover {
+    background-color: hsl(92, 99%, 28%);
+    transform: translateY(-2px);
+}
+
+/* ==================== */
+/* Login Link Container */
+/* ==================== */
+.login-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+a {
+    margin: 20px 0;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* ==================== */
+/* Container Styling    */
+/* ==================== */
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add spacing between cards */
+    max-width: 1200px; /* Set maximum width */
+    padding: 0 20px; /* Add padding for smaller screens */
+    box-sizing: border-box;
+    width: 100%; /* Make container responsive */
+}
+
+/* ==================== */
+/* Card Styling         */
+/* ==================== */
+.card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px; /* Round bottom corners */
+}
+
+/* Card Title Styling */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Card Text Styling */
+.card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #555;
+}
+
+/* ==================== */
+/* Custom Button Styling */
+/* ==================== */
+.rose {
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Make button responsive */
+    max-width: 200px; /* Limit button width */
+}
+
+.rose:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.chota {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; /* Shrinks to the button size */
+}
+
+/* ==================== */
+/* Responsive Design    */
+/* ==================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .navbar-links {
+        gap: 10px;
+    }
+
+    .navbar-links a {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    form {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    input, button {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar-links a {
+        font-size: 0.875rem;
+    }
+
+    form {
+        padding: 15px; /* Further reduce padding for very small screens */
+    }
+
+    input, button {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .card {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+}
+/* Home Page Background */
+.index {
+    background-image: url('/images/home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Profile Page Background */
+.profile{
+    background-image: url('/images/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Signup Page Background */
+.signup{
+    background-image: url('/images/signup.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Signin Page Background */
+.login{
+    background-image: url('/images/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* General Page Styling */

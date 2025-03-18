@@ -1,0 +1,183 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 80px 0 0 0; /* Add top padding to account for the fixed nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: url("/images/signup.jpg");
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Styling */
+.lotus form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+   
+}
+
+.lotus input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lotus input:focus {
+    border-color: hsl(92, 99%, 28%); /* HSL equivalent of orangered */
+    outline: none;
+    box-shadow: 0 0 8px hsla(16, 100%, 50%, 0.3); /* HSL equivalent with transparency */
+}
+
+.lotus button {
+    width: 100%;
+    padding: 12px;
+    background-color:  hsl(92, 99%, 28%); /* HSL equivalent of orangered */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.lotus button:hover {
+    background-color:  hsl(92, 99%, 28%); /* Darker shade of HSL orangered */
+    transform: translateY(-2px);
+}
+
+/* Crop Information Cards Styling */
+.container.mt-3.mx-auto.row.row-cols-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    background-image: url("/images/rice.jpg"); /* Ensure this path is correct */
+    background-size: cover; /* Ensures the image covers the entire card */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: white; /* Ensure text is visible on the image */
+}
+
+.card-body {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text visibility */
+    border-radius: 10px; /* Match the card's border radius */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white; /* Ensure the title is visible */
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: white; /* Ensure the text is visible */
+}
+
+/* Logout Button Styling */
+.chota {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.rose {
+    padding: 12px 24px;
+    background-color: hsl(16, 100%, 50%); /* HSL equivalent of orangered */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rose:hover {
+    background-color: hsl(16, 100%, 40%); /* Darker shade of HSL orangered */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .container.mt-3.mx-auto.row.row-cols-4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .lotus form {
+        padding: 20px;
+    }
+
+    .lotus input, .lotus button {
+        font-size: 0.9rem;
+    }
+}

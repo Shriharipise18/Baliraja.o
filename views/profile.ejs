@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Profile - BALIRAJA</title>
+    <link rel="stylesheet" type="text/css" href="/profile.css">
+</head>
+
+<body>
+    <% layout('layout') %>
+    <h1   >Welcome, <%= locals.user? locals.user.username : 'User' %></h1> 
+    <h2  >Set Threshold for Crops</h2>
+    <div class="lotus">
+    <form action="/profile/setThreshold" method="post">
+        <input type="text" name="crop" placeholder="Crop Type" required>
+        <input type="text" name="soil" placeholder="Soil Type" required>
+        <input type="number" name="threshold" placeholder="Threshold Value" required>
+        <button type="submit">Set Threshold</button>
+    </form>
+</div>
+   <div> <h2 >Crop Information</h2>
+    <div class="container mt-3 mx-auto row row-cols-4">
+        <% cropInfos.forEach(cropInfo => { %>
+            <% if (cropInfo.createdBy === user.username) { %>  <!-- Only show if the user created it -->
+                <div class="col">
+                    <div class="card" style="width: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Crop Information</h5>
+                            <p>Crop: <%= cropInfo.crop %></p>
+                            <p>Soil: <%= cropInfo.soil %></p>
+                            <p>Threshold: <%= cropInfo.threshold %></p>
+                            <p>Created By: <%= cropInfo.createdBy %></p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    
+   
+    </div>
+    
+    <form class='chota'action="/auth/logout" method="POST">
+        <button type="submit" class="rose">Logout</button>
+    </form>
+   
+</form>
+</body>
+</html>

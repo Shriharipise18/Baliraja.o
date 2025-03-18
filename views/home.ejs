@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - BALIRAJA</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Welcome to your personalized irrigation dashboard.</p>
+
+    <h2>Choose Theme</h2>
+    <form action="/setTheme" method="post">
+        <label for="theme">Select a theme:</label>
+        <select name="theme" id="theme">
+            <option value="default">Default</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+        <button type="submit">Save Theme</button>
+    </form>
+
+    <h2>Set Threshold for Crops</h2>
+    <form action="/profile/setThreshold" method="post">
+        <input type="text" name="crop" placeholder="Crop Type" required>
+        <input type="text" name="soil" placeholder="Soil Type" required>
+        <input type="number" name="threshold" placeholder="Threshold Value" required>
+        <button type="submit">Set Threshold</button>
+    </form>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Dashboard - BALIRAJA</title>
+     <link rel="stylesheet" type="text/css" href="/styles.css">
+ </head>
+ <body >
+     <h1>Dashboard</h1>
+     <p  >Welcome to your personalized irrigation dashboard.</p>
+ 
+     <h2>Choose Theme</h2>
+     <form action="/setTheme" method="post">
+         <label for="theme">Select a theme:</label>
+         <select name="theme" id="theme">
+             <option value="default">Default</option>
+             <option value="light">Light</option>
+             <option value="dark">Dark</option>
+         </select>
+         <button type="submit">Save Theme</button>
+     </form>
+ 
+     <h2>Set Threshold for Crops</h2>
+     <form action="/profile/setThreshold" method="post">
+         <input type="text" name="crop" placeholder="Crop Type" required>
+         <input type="text" name="soil" placeholder="Soil Type" required>
+         <input type="number" name="threshold" placeholder="Threshold Value" required>
+         <button type="submit">Set Threshold</button>
+     </form>
+ 
+     <a href="/auth/logout">Logout</a> <!-- Added Logout Link -->
+ </body>
+ </html>
+ 

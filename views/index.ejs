@@ -1,0 +1,194 @@
+<% layout('layout') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>बळीराजा</title>
+    
+    <!-- Default Styles -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Theme-Specific Styles -->
+    <% if (theme === 'dark') { %>
+        <link rel="stylesheet" href="/dark.css">
+    <% } else if (theme === 'light') { %>
+        <link rel="stylesheet" href="/light.css">
+    <% } %>
+
+    <!-- Carousel and Page Styles -->
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+         
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+           
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Carousel Styling */
+        .carousel {
+            width: 100%; /* Full width of the parent container */
+            margin: 0; /* Remove margin to stretch to edges */
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%; /* Each slide takes full width */
+            box-sizing: border-box;
+            position: relative; /* Required for absolute positioning of content */
+        }
+
+        .carousel-item img {
+            width: 100%; /* Image takes full width of the slide */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+        }
+
+        /* Content Overlay */
+        .carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for contrast */
+}
+
+.carousel-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.carousel-content p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+        /* Carousel Control Buttons */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            width: 40px; /* Fixed width */
+            height: 40px; /* Fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <!-- Sliding Images Carousel -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="/images/home.jpg" alt="Slide 1">
+                <div class="carousel-content">
+                  <h1 style="color:hsl(92, 99%, 28%)">~बलीराजा मध्ये आपले स्वागत आहे~</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/signup.jpg" alt="Slide 2">
+                <div class="carousel-content">
+                  <h1 style="color:hsl(92, 99%, 28%)">~पोशाखयुक्त पाणी सिंचन प्रणाली~</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/login.jpg" alt="Slide 3">
+                <div class="carousel-content">
+                   <h1 style="color:hsl(92, 93%, 12%)">~आमचे संशोधन आणि तुमचे मत~</h1>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <!-- Theme Selection Form -->
+    <!-- <div class="theme-form">
+        <h2>Choose Theme</h2>
+        <form action="/setTheme" method="post">
+            <label for="theme">Select a theme:</label>
+            <select name="theme" id="theme">
+                <option value="default" <% if (theme === 'default') { %>selected<% } %>>Default</option>
+                <option value="light" <% if (theme === 'light') { %>selected<% } %>>Light</option>
+                <option value="dark" <% if (theme === 'dark') { %>selected<% } %>>Dark</option>
+            </select>
+            <button type="submit">Save Theme</button>
+        </form>
+    </div> -->
+
+    <!-- Carousel JavaScript -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
