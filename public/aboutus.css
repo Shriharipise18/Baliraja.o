@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/new.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* About Page Container */
+.about-container {
+    max-width: 900px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Card Design */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px); /* Two cards per row with spacing */
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Headings */
+.card h1, .card h2 {
+    color: #2c3e50;
+}
+
+/* List Styling */
+.card ul {
+    list-style-type: square;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.card ul li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Contact Info */
+.card p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 90%;
+    }
+}
